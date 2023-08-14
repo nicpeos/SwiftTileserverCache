@@ -38,7 +38,7 @@ RUN git clone https://github.com/mapbox/tippecanoe.git -b 1.36.0 \
 RUN apt-get -y update && apt-get -y install nodejs npm
 
  # Install fontnik
-RUN npm install -g fontnik@0.6.0
+RUN npm install --target_arch=x64 --target_platform=linux -g fontnik@0.6.0
 
 # Copy build artifacts
 COPY --from=build /build/.build/release /SwiftTileserverCache
